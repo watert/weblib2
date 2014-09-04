@@ -1,0 +1,27 @@
+{
+  "name": "weblib2",
+  "version": "0.0.0",
+  "homepage": "https://github.com/watert/weblib2",
+  "authors": [
+    "waterwu <boatwind@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "bootstrap": "~3.2.0",
+    "font-awesome": "~4.2.0",
+    "jquery-bbq-deparam": "~1.2.1",
+    "jquery": "~2.1.1",
+    "marked": "~0.3.2",
+    "requirejs": "~2.1.14",
+    "swiper": "~2.7.0",
+    "zepto": "~1.1.4"
+  }
+}
