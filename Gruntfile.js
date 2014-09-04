@@ -1,0 +1,27 @@
+module.exports = function(grunt){
+	grunt.initConfig({
+		requirejs:{
+			compile:{
+				options:{
+					baseUrl:"./",
+					mainConfigFile:"config.js",
+				    include:["app/base"],
+				    out:"builds/app/base.js"
+				}
+			}
+		},
+		uglify:{
+			options:{
+				preserveComments:"some"
+			},
+			dist:{
+				files:{
+					"pack.min.js":["bower_components/requirejs/require.js","config.js","builds/app/base.js"]
+				}
+			}
+		}
+	});
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.registerTask('default',["requirejs","uglify"]);
+};

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Weblib 2 based on bower</title>
+	<script src="pack.min.js"></script>
+	<!-- <script src="bower_components/requirejs/require.js"></script>
+	<script src="config.js"></script>
+	<script src="builds/main.js"></script> -->
+	<script>
+		require(["bootstrap","font-awesome"]);
+	</script>
+</head>
+<body>
+	<markdown>
+		## hello world
+	</markdown>
+	<script>
+		require(["jquery","marked"],function($,marked){
+			var outdent = function(text){
+				var reg = /\n(\s+).*/g;
+				var indents = reg.exec(text);
+				if(indents&&indents[1]){
+					return text.replace("\n"+indents[1],"\n")
+
+				}else {
+					return text;
+				}
+			};
+			$("markdown").each(function(){
+				var $dom = $(this);
+				
+				var text = $dom.html();
+				text = outdent(text);
+				var html = marked.parse(text);
+				$dom.html(html);
+			});
+		});
+	</script>
+</body>
+</html>
